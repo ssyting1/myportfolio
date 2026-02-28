@@ -67,11 +67,11 @@ const LifestyleSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="skills" className="relative py-14 sm:py-16 lg:py-20 overflow-hidden">
+    <section ref={sectionRef} id="skills" className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header - Just title, no link */}
-        <div ref={titleRef} className="mb-8 sm:mb-10 lg:mb-14">
-          <h2 className="font-oswald font-light text-3xl sm:text-4xl lg:text-5xl text-brand-text">
+        <div ref={titleRef} className="mb-10 sm:mb-12 lg:mb-16">
+          <h2 className="font-oswald font-light text-4xl sm:text-5xl lg:text-6xl text-brand-text">
             {lifestyleConfig.sectionTitle}
           </h2>
         </div>
@@ -79,7 +79,7 @@ const LifestyleSection = () => {
         {/* Responsive Grid */}
         <div
           ref={gridRef}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6"
         >
           {lifestyleConfig.articles.map((article) => (
             <div
@@ -101,11 +101,11 @@ const LifestyleSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-3 sm:p-4">
-                  <h3 className="font-oswald font-medium text-sm sm:text-base text-brand-text mb-1">
+                <div className="p-4 sm:p-5">
+                  <h3 className="font-oswald font-medium text-base sm:text-lg text-brand-text mb-2">
                     {article.title}
                   </h3>
-                  <p className="font-roboto text-xs sm:text-sm text-brand-dark-gray leading-relaxed">
+                  <p className="font-roboto text-sm sm:text-base text-brand-dark-gray leading-relaxed">
                     {article.excerpt}
                   </p>
                 </div>

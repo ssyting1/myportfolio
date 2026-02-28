@@ -111,10 +111,10 @@ const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative pt-28 sm:pt-32 lg:pt-36 pb-12 lg:pb-16 overflow-hidden"
+      className="relative pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-20 overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-5 lg:gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
           {/* Left: Image with 3D perspective */}
           <div
             ref={imageContainerRef}
@@ -128,7 +128,7 @@ const HeroSection = () => {
                 ref={imageRef}
                 src={heroConfig.image}
                 alt={heroConfig.imageAlt}
-                className="w-full h-auto max-w-[240px] sm:max-w-[280px] lg:max-w-[320px] mx-auto aspect-square object-cover rounded-lg shadow-xl"
+                className="w-full h-auto max-w-[280px] sm:max-w-[320px] lg:max-w-[380px] mx-auto aspect-square object-cover rounded-lg shadow-xl"
                 style={{ transformStyle: 'preserve-3d' }}
               />
             </div>
@@ -137,16 +137,16 @@ const HeroSection = () => {
           {/* Right: Content */}
           <div className="order-1 lg:order-2 flex flex-col justify-center">
             {/* Date badge */}
-            <div ref={dateRef} className="mb-2">
-              <span className="inline-block px-3 py-1 bg-brand-text text-brand-linen text-xs font-roboto tracking-wider rounded-full">
+            <div ref={dateRef} className="mb-3">
+              <span className="inline-block px-4 py-1.5 bg-brand-text text-brand-linen text-sm font-roboto tracking-wider rounded-full">
                 {heroConfig.date}
               </span>
             </div>
 
-            <div className="mb-4 lg:mb-5">
+            <div className="mb-5 lg:mb-6">
               <h1
                 ref={titleRef}
-                className="font-oswald font-light text-3xl sm:text-4xl lg:text-5xl text-brand-text leading-[1.15] tracking-tight pb-1"
+                className="font-oswald font-light text-4xl sm:text-5xl lg:text-6xl text-brand-text leading-[1.15] tracking-tight pb-1"
               >
                 {heroConfig.titleLine1}
                 <br />
@@ -155,20 +155,20 @@ const HeroSection = () => {
             </div>
 
             <div ref={contentRef} className="mt-1">
-              <p className="font-roboto text-xs text-brand-dark-gray mb-1 uppercase tracking-wider">
+              <p className="font-roboto text-sm sm:text-base text-brand-dark-gray mb-2 uppercase tracking-wider">
                 {heroConfig.readTime}
               </p>
 
-              <p className="font-roboto text-sm sm:text-base text-brand-dark-gray leading-relaxed mb-4 lg:mb-5 max-w-md">
+              <p className="font-roboto text-base sm:text-lg lg:text-xl text-brand-dark-gray leading-relaxed mb-5 lg:mb-6 max-w-lg">
                 {heroConfig.description}
               </p>
 
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2 px-5 py-2.5 bg-brand-text text-brand-linen font-roboto text-sm uppercase tracking-wider rounded-sm hover:bg-brand-dark-gray transition-colors"
+                className="group inline-flex items-center gap-3 px-6 py-3 bg-brand-text text-brand-linen font-roboto text-base uppercase tracking-wider rounded-sm hover:bg-brand-dark-gray transition-colors"
               >
                 <span>{heroConfig.ctaText}</span>
-                <ArrowRight size={14} className="transform transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight size={18} className="transform transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
           </div>

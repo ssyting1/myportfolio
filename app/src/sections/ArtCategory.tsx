@@ -85,19 +85,19 @@ const ArtCategory = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="relative py-14 sm:py-16 lg:py-20">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
+    <section ref={sectionRef} id="about" className="relative py-16 sm:py-20 lg:py-24">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section title */}
-        <div className="mb-6 sm:mb-8 lg:mb-10">
-          <h2 className="font-oswald font-light text-3xl sm:text-4xl lg:text-5xl text-brand-text">
+        <div className="mb-8 sm:mb-10 lg:mb-12">
+          <h2 className="font-oswald font-light text-4xl sm:text-5xl lg:text-6xl text-brand-text">
             {artCategoryConfig.sectionTitle}
           </h2>
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
           {/* Left Column: Photo + Description */}
-          <div className="space-y-4 sm:space-y-5">
+          <div className="space-y-5 sm:space-y-6">
             {/* Featured Image */}
             <div
               ref={featuredImageRef}
@@ -109,41 +109,41 @@ const ArtCategory = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5">
-                <span className="font-roboto text-xs uppercase tracking-wider text-white/70 mb-1 block">
+              <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 right-5 sm:right-6">
+                <span className="font-roboto text-sm uppercase tracking-wider text-white/70 mb-2 block">
                   {artCategoryConfig.featuredLabel}
                 </span>
-                <h2 className="font-oswald font-light text-lg sm:text-xl text-white leading-tight">
+                <h2 className="font-oswald font-light text-xl sm:text-2xl lg:text-3xl text-white leading-tight">
                   {artCategoryConfig.featuredTitle}
                 </h2>
               </div>
             </div>
 
             {/* Description */}
-            <p className="font-roboto text-sm sm:text-base text-brand-dark-gray leading-relaxed">
+            <p className="font-roboto text-base sm:text-lg lg:text-xl text-brand-dark-gray leading-relaxed">
               {artCategoryConfig.featuredDescription}
             </p>
           </div>
 
           {/* Right Column: Core Skills + Domain Expertise + Certification */}
-          <div className="space-y-5 sm:space-y-6">
+          <div className="space-y-6 sm:space-y-8">
             {/* Core Skills */}
             <div ref={skillsRef}>
-              <h3 className="font-oswald text-xs uppercase tracking-widest text-brand-dark-gray mb-3 sm:mb-4">
+              <h3 className="font-oswald text-sm uppercase tracking-widest text-brand-dark-gray mb-4 sm:mb-5">
                 Core Skills
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {artCategoryConfig.gridArticles.map((article) => (
-                  <div key={article.id} className="skill-item flex items-center justify-between py-2 border-b border-border">
+                  <div key={article.id} className="skill-item flex items-center justify-between py-3 border-b border-border">
                     <div>
-                      <span className="font-roboto text-xs uppercase tracking-wider text-brand-light-gray">
+                      <span className="font-roboto text-sm uppercase tracking-wider text-brand-light-gray">
                         {article.category}
                       </span>
-                      <h4 className="font-oswald font-medium text-sm sm:text-base text-brand-text">
+                      <h4 className="font-oswald font-medium text-base sm:text-lg text-brand-text">
                         {article.title}
                       </h4>
                     </div>
-                    <span className="font-roboto text-sm text-brand-dark-gray">
+                    <span className="font-roboto text-base text-brand-dark-gray">
                       {article.readTime}{artCategoryConfig.readSuffix}
                     </span>
                   </div>
@@ -153,14 +153,14 @@ const ArtCategory = () => {
 
             {/* Domain Expertise */}
             <div ref={expertiseRef}>
-              <h3 className="font-oswald text-xs uppercase tracking-widest text-brand-dark-gray mb-3 sm:mb-4">
+              <h3 className="font-oswald text-sm uppercase tracking-widest text-brand-dark-gray mb-4 sm:mb-5">
                 {artCategoryConfig.categoriesLabel}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {artCategoryConfig.categories.map((cat) => (
                   <span
                     key={cat}
-                    className="expertise-tag px-3 py-1.5 bg-brand-text text-white font-roboto text-xs"
+                    className="expertise-tag px-4 py-2 bg-brand-text text-white font-roboto text-sm"
                   >
                     {cat}
                   </span>
@@ -170,17 +170,17 @@ const ArtCategory = () => {
 
             {/* Certifications */}
             <div>
-              <h3 className="font-oswald text-xs uppercase tracking-widest text-brand-dark-gray mb-3 sm:mb-4 flex items-center gap-2">
-                <Calendar size={14} />
+              <h3 className="font-oswald text-sm uppercase tracking-widest text-brand-dark-gray mb-4 sm:mb-5 flex items-center gap-2">
+                <Calendar size={18} />
                 {artCategoryConfig.eventsLabel}
               </h3>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-3">
                 {artCategoryConfig.events.map((event, index) => (
-                  <div key={index} className="flex items-center gap-2 sm:gap-3">
-                    <span className="font-roboto text-sm text-brand-light-gray">
+                  <div key={index} className="flex items-center gap-3 sm:gap-4">
+                    <span className="font-roboto text-base text-brand-light-gray">
                       {event.date}
                     </span>
-                    <span className="font-roboto text-sm text-brand-text">
+                    <span className="font-roboto text-base text-brand-text">
                       {event.title}
                     </span>
                   </div>

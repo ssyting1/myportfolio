@@ -110,13 +110,13 @@ const Navigation = () => {
             : 'py-4 lg:py-6'
         }`}
       >
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="flex items-center justify-between">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center">
             {/* Logo */}
             <div
               ref={logoRef}
-              className={`font-oswald font-light tracking-widest transition-all duration-500 ${
-                isScrolled ? 'text-xl lg:text-2xl' : 'text-2xl lg:text-4xl'
+              className={`font-oswald font-light tracking-widest transition-all duration-500 flex-shrink-0 ${
+                isScrolled ? 'text-xl lg:text-2xl' : 'text-2xl lg:text-3xl'
               }`}
             >
               <a href="#" className="text-brand-text hover:text-brand-dark-gray transition-colors">
@@ -124,17 +124,17 @@ const Navigation = () => {
               </a>
             </div>
 
-            {/* Desktop Navigation Links */}
+            {/* Desktop Navigation Links - Centered */}
             <div
               ref={linksRef}
-              className="hidden lg:flex items-center gap-6 xl:gap-10"
+              className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 flex-1"
             >
               {navigationConfig.links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className="font-roboto text-xs tracking-wider uppercase text-brand-dark-gray hover:text-brand-text transition-colors relative group"
+                  className="font-roboto text-sm tracking-wider uppercase text-brand-dark-gray hover:text-brand-text transition-colors relative group"
                 >
                   {link.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-text transition-all duration-300 group-hover:w-full" />
@@ -147,25 +147,25 @@ const Navigation = () => {
                 className="p-2 text-brand-dark-gray hover:text-brand-text transition-colors"
                 aria-label={navigationConfig.searchAriaLabel}
               >
-                <Search size={18} />
+                <Search size={20} />
               </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-2 lg:hidden ml-auto">
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className="p-2 text-brand-dark-gray hover:text-brand-text transition-colors"
                 aria-label={navigationConfig.searchAriaLabel}
               >
-                <Search size={20} />
+                <Search size={22} />
               </button>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="p-2 text-brand-dark-gray hover:text-brand-text transition-colors"
                 aria-label="Toggle menu"
               >
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
               </button>
             </div>
           </div>
@@ -184,7 +184,7 @@ const Navigation = () => {
               key={link.label}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="mobile-menu-item font-oswald font-light text-3xl sm:text-4xl text-brand-text hover:text-brand-dark-gray transition-colors py-3"
+              className="mobile-menu-item font-oswald font-light text-4xl sm:text-5xl text-brand-text hover:text-brand-dark-gray transition-colors py-4"
               style={{ opacity: 0 }}
             >
               {link.label}
@@ -204,7 +204,7 @@ const Navigation = () => {
             className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 text-brand-text hover:text-brand-dark-gray transition-colors"
             aria-label={navigationConfig.closeSearchAriaLabel}
           >
-            <X size={28} />
+            <X size={32} />
           </button>
 
           <div className="w-full max-w-2xl px-6">
@@ -214,7 +214,7 @@ const Navigation = () => {
               className="w-full bg-transparent border-b-2 border-brand-text py-4 text-2xl sm:text-3xl lg:text-5xl font-oswald font-light placeholder:text-brand-light-gray focus:outline-none"
               autoFocus
             />
-            <p className="mt-4 text-sm text-brand-dark-gray">
+            <p className="mt-4 text-base text-brand-dark-gray">
               {navigationConfig.searchHint}
             </p>
           </div>

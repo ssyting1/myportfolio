@@ -71,11 +71,11 @@ const DesignSection = () => {
   };
 
   return (
-    <section ref={sectionRef} id="experience" className="relative py-14 sm:py-16 lg:py-20 bg-brand-linen">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
+    <section ref={sectionRef} id="experience" className="relative py-16 sm:py-20 lg:py-24 bg-brand-linen">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Title */}
-        <div ref={titleRef} className="mb-8 sm:mb-10 lg:mb-12">
-          <h2 className="font-oswald font-light text-3xl sm:text-4xl lg:text-5xl text-brand-text">
+        <div ref={titleRef} className="mb-10 sm:mb-12 lg:mb-16">
+          <h2 className="font-oswald font-light text-4xl sm:text-5xl lg:text-6xl text-brand-text">
             {designConfig.sectionTitle}
           </h2>
         </div>
@@ -83,7 +83,7 @@ const DesignSection = () => {
         {/* Grid - 1 column on mobile, 2 columns on tablet+ */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5"
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6"
         >
           {designConfig.items.map((item) => (
             <div
@@ -94,7 +94,7 @@ const DesignSection = () => {
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Image - Logo container with padding */}
-                <div className="relative w-full sm:w-[120px] lg:w-[140px] aspect-video sm:aspect-square flex-shrink-0 overflow-hidden bg-white flex items-center justify-center p-3 sm:p-4">
+                <div className="relative w-full sm:w-[140px] lg:w-[160px] aspect-video sm:aspect-square flex-shrink-0 overflow-hidden bg-white flex items-center justify-center p-4 sm:p-5">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -107,12 +107,12 @@ const DesignSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 p-4 sm:p-5 flex flex-col justify-center">
-                  <h3 className="font-oswald font-medium text-sm sm:text-base text-brand-text mb-1 sm:mb-2">
+                <div className="flex-1 p-5 sm:p-6 flex flex-col justify-center">
+                  <h3 className="font-oswald font-medium text-base sm:text-lg lg:text-xl text-brand-text mb-2 sm:mb-3">
                     {item.title}
                   </h3>
                   {item.quote && (
-                    <p className="font-roboto text-xs sm:text-sm text-brand-dark-gray leading-relaxed">
+                    <p className="font-roboto text-sm sm:text-base text-brand-dark-gray leading-relaxed">
                       {item.quote}
                     </p>
                   )}
@@ -124,10 +124,10 @@ const DesignSection = () => {
 
         {/* View All Link - Only show if text exists */}
         {designConfig.viewMoreText && (
-          <div className="mt-8 sm:mt-10 text-center">
+          <div className="mt-10 sm:mt-12 text-center">
             <a
               href="#"
-              className="inline-block font-roboto text-sm uppercase tracking-widest text-brand-dark-gray hover:text-brand-text transition-colors relative group"
+              className="inline-block font-roboto text-base uppercase tracking-widest text-brand-dark-gray hover:text-brand-text transition-colors relative group"
             >
               {designConfig.viewMoreText}
               <span className="absolute bottom-0 left-0 w-full h-px bg-brand-text transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />

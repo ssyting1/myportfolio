@@ -40,7 +40,7 @@ export const navigationConfig: NavigationConfig = {
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "My Day", href: "#day-in-life" },
-    { label: "Side Project", href: "#side-project" },
+    { label: "Side Projects", href: "#side-project" },
     { label: "Contact", href: "#contact" },
   ],
   searchPlaceholder: "Search projects, skills...",
@@ -98,28 +98,28 @@ export const latestArticlesConfig: LatestArticlesConfig = {
     {
       id: 1,
       title: "Clockwork Delivery Platform",
-      subtitle: "A comprehensive shipment management and driver dispatching platform featuring intelligent load builder and scheduler. The system optimizes delivery assignments, manages driver workflows, and provides real-time visibility into delivery status, ensuring efficient last-mile operations and enhanced customer satisfaction.",
+      subtitle: "A comprehensive shipment management and driver dispatching platform featuring intelligent load builder and scheduler. The system optimizes delivery assignments, manages driver workflows, and provides real-time visibility into delivery status, ensuring efficient last-mile operations and enhanced customer satisfaction. Worked closely with stakeholders on the design process, prioritizing and adding features based on usability testing and market research to continuously improve the platform.",
       image: "/clockwork-home.jpg",
       category: "SaaS Platform",
     },
     {
       id: 2,
       title: "TMS Integration Hub",
-      subtitle: "An enterprise integration solution that connects customer ERP systems with transportation management platforms. Supports multiple integration protocols including EDI, JSON, and REST APIs, enabling seamless data exchange for order processing, shipment status synchronization, and real-time tracking updates across the supply chain.",
+      subtitle: "An enterprise integration solution that connects customer ERP systems with transportation management platforms. Supports multiple integration protocols including EDI, APIs, File transfer / flat files (CSV, XML, etc.), Email parsing with AI automation tools, enabling seamless data exchange for order processing, shipment status synchronization, and real-time tracking updates across the supply chain. Worked directly with customer integration teams to help with data mapping and ensure smooth connectivity between systems.",
       image: "/project-logistics-platform.jpg",
       category: "Integration",
     },
     {
       id: 3,
       title: "Driver Mobile App",
-      subtitle: "A multi-role mobile application that empowers drivers to manage deliveries, capture electronic proof of delivery (ePOD), and confirm shipments in real-time. Also supports warehouse staff and receivers in performing goods confirmation, staging, and delivery verification tasks through intuitive role-based interfaces.",
+      subtitle: "A multi-role mobile application that empowers drivers to manage deliveries, capture electronic proof of delivery (ePOD), and confirm shipments in real-time. Also supports warehouse staff and receivers in performing goods confirmation, staging, and delivery verification tasks through intuitive role-based interfaces. Constantly enhanced based on direct feedback from drivers and customers, ensuring the app evolves to meet real-world operational needs and user expectations.",
       image: "/project-mobile-app.jpg",
       category: "Mobile Product",
     },
     {
       id: 4,
-      title: "Project Logistics Tracker",
-      subtitle: "An end-to-end materials tracking system that monitors the movement of goods from construction sites to warehouses, through ports, and finally to manufacturing facilities. Provides real-time visibility into shipment status, transit milestones, and delivery confirmations across multiple locations and transportation modes.",
+      title: "Project Logistics Ledger",
+      subtitle: "An end-to-end materials tracking system built for a customer managing logistics for a renewable energy company. The platform helps them manage complex moves across construction sites, warehouses, ports, and manufacturing facilities. Features an AI-enhanced shipment builder that recommends optimal shipping configurations based on what is available at each location, streamlining the entire logistics planning process.",
       image: "/project-wms.jpg",
       category: "Supply Chain",
     },
@@ -178,7 +178,7 @@ export const artCategoryConfig: ArtCategoryConfig = {
   featuredImageAlt: "Product Strategy and Vision",
   featuredLabel: "Professional Summary",
   featuredTitle: "Driving Digital Transformation in Logistics",
-  featuredDescription: "I specialize in translating complex technical requirements into user-centric solutions that deliver measurable business outcomes. With deep expertise in TMS/WMS platforms, AI-powered automation, and process optimization, I've helped enterprise 3PLs, shippers, and freight forwarders achieve significant operational improvements. My approach combines data-driven decision making with strong cross-functional leadership to build products that scale.",
+  featuredDescription: "I specialize in translating complex technical requirements into user-centric solutions that deliver measurable business outcomes. With deep expertise in TMS/WMS platforms, AI-powered automation, and process optimization, I've helped enterprise 3PLs, shippers, and freight forwarders achieve significant operational improvements. My approach combines data-driven decision making with strong cross-functional leadership to build products that scale. I have extensive experience with on-site training and go-live support, handling hypercare periods to ensure smooth customer transitions. I have worked with customers across Australia, Southeast Asia, Europe, and the US, adapting solutions to meet diverse regional needs and regulatory requirements.",
   featuredCtaText: "",
   gridArticles: [
     { id: 1, title: "Product Strategy & Roadmap", category: "Core Skill", readTime: "5 years" },
@@ -350,8 +350,8 @@ export interface GreenTribeConfig {
 }
 
 export const greenTribeConfig: GreenTribeConfig = {
-  sectionTitle: "Side Project",
-  sectionDescription: "Personal projects and experiments I work on outside of my professional role. These initiatives allow me to explore emerging technologies, test new ideas, and continuously expand my skill set in areas like AI automation, data analytics, and full-stack development.",
+  sectionTitle: "Side Projects",
+  sectionDescription: "Personal projects and experiments I work on outside of my professional role. These initiatives help me learn about different AI models and build technical skills – because let's face it, being a 'legacy PM' who just writes specs isn't enough anymore. In today's age of AI, you need to understand the tech, experiment with the tools, and actually build things yourself. I'm constantly working on different side projects to build up my skills in AI automation, data analytics, and full-stack development.",
   readMoreText: "",
   joinTitle: "",
   joinDescription: "",
@@ -502,7 +502,7 @@ export interface DayInLifeConfig {
 
 export const dayInLifeConfig: DayInLifeConfig = {
   sectionTitle: "A Day in My Life",
-  sectionDescription: "A glimpse into my daily routine as a Senior Product Manager in logistics SaaS, from morning standups to late-night testing sessions.",
+  sectionDescription: "A glimpse into my daily routine as a Senior Product Manager in logistics SaaS, from morning standups to late-night testing sessions. (P.S. These photos are AI-generated because I'm too busy actually working to take pictures of myself working – but hey, they capture the vibe!)",
   activities: [
     {
       id: 1,
@@ -589,7 +589,7 @@ export const dayInLifeConfig: DayInLifeConfig = {
       icon: "Moon"
     }
   ],
-  closingStatement: "My typical day runs 8 AM to 6 PM, but often extends to midnight during release cycles and testing. Every day is different, but the goal stays the same: delivering value to users and driving business outcomes through great product experiences."
+  closingStatement: "Typical day? 8 AM to 6 PM. Release week? More like 8 AM to 'why is it suddenly midnight and why is the staging environment on fire?' Post-deployment testing hits different when you're questioning every life choice that led you here. Wouldn't trade it though – the bugs are annoying, but the dopamine hit when everything actually works? Chef's kiss."
 };
 
 // ============================================================

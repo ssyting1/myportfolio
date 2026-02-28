@@ -50,32 +50,32 @@ const GreenTribe = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="side-project" className="relative py-14 sm:py-16 lg:py-20 bg-brand-linen">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
+    <section ref={sectionRef} id="side-project" className="relative min-h-screen py-16 sm:py-20 lg:py-24 bg-brand-linen flex items-center">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
-        <div className="mb-8 sm:mb-10 lg:mb-12 text-center">
-          <h2 className="font-oswald font-light text-3xl sm:text-4xl lg:text-5xl text-brand-text">
+        <div className="mb-10 sm:mb-12 lg:mb-16 text-center">
+          <h2 className="font-oswald font-light text-4xl sm:text-5xl lg:text-6xl text-brand-text">
             {greenTribeConfig.sectionTitle}
           </h2>
-          <p className="font-roboto text-sm sm:text-base text-brand-dark-gray mt-3 sm:mt-4 max-w-2xl mx-auto">
+          <p className="font-roboto text-base sm:text-lg lg:text-xl text-brand-dark-gray mt-4 sm:mt-6 max-w-4xl mx-auto leading-relaxed">
             {greenTribeConfig.sectionDescription}
           </p>
         </div>
 
         {/* Working Calculator */}
-        <div className="mb-10 sm:mb-12">
+        <div className="mb-12 sm:mb-16">
           <TariffCalculator />
         </div>
 
         {/* Architecture Cards - Compact Grid */}
-        <div ref={cardsRef} className="grid md:grid-cols-3 gap-4 sm:gap-5">
+        <div ref={cardsRef} className="grid md:grid-cols-3 gap-6 sm:gap-8">
           {greenTribeConfig.members.map((member) => (
             <article
               key={member.id}
-              className="tribe-card bg-white p-5 sm:p-6 shadow-sm"
+              className="tribe-card bg-white p-6 sm:p-8 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex-shrink-0">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
                   <img
                     src={member.avatar}
                     alt={member.name}
@@ -83,20 +83,20 @@ const GreenTribe = () => {
                   />
                 </div>
                 <div>
-                  <h4 className="font-oswald font-medium text-sm sm:text-base text-brand-text">
+                  <h4 className="font-oswald font-medium text-base sm:text-lg text-brand-text">
                     {member.name}
                   </h4>
-                  <span className="font-roboto text-xs text-brand-light-gray">
+                  <span className="font-roboto text-sm text-brand-light-gray">
                     {member.role}
                   </span>
                 </div>
               </div>
 
-              <h3 className="font-oswald font-light text-base sm:text-lg text-brand-text mb-2">
+              <h3 className="font-oswald font-light text-lg sm:text-xl text-brand-text mb-3">
                 {member.title}
               </h3>
 
-              <p className="font-roboto text-xs sm:text-sm text-brand-dark-gray leading-relaxed">
+              <p className="font-roboto text-sm sm:text-base text-brand-dark-gray leading-relaxed">
                 {member.excerpt}
               </p>
             </article>

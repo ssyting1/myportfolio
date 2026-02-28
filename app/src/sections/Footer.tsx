@@ -77,7 +77,7 @@ const Footer = () => {
     <footer
       ref={footerRef}
       id="contact"
-      className={`relative py-14 sm:py-16 lg:py-20 transition-colors duration-500 ${
+      className={`relative py-16 sm:py-20 lg:py-24 transition-colors duration-500 ${
         isEmailFocused ? 'bg-brand-text' : 'bg-brand-linen'
       }`}
     >
@@ -93,25 +93,25 @@ const Footer = () => {
       </div>
 
       <div ref={contentRef} className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left: Contact Form */}
           <div className="lg:col-span-1">
             <h3
-              className={`font-oswald font-light text-xl sm:text-2xl lg:text-3xl mb-3 sm:mb-4 transition-colors duration-500 ${
+              className={`font-oswald font-light text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-5 transition-colors duration-500 ${
                 isEmailFocused ? 'text-brand-linen' : 'text-brand-text'
               }`}
             >
               {footerConfig.newsletterTitle}
             </h3>
             <p
-              className={`font-roboto text-sm mb-6 sm:mb-8 transition-colors duration-500 ${
+              className={`font-roboto text-base sm:text-lg mb-8 sm:mb-10 transition-colors duration-500 ${
                 isEmailFocused ? 'text-brand-light-gray' : 'text-brand-dark-gray'
               }`}
             >
               {footerConfig.newsletterDescription}
             </p>
 
-            <form onSubmit={handleSendMessage} className="space-y-4 sm:space-y-5">
+            <form onSubmit={handleSendMessage} className="space-y-5 sm:space-y-6">
               <input
                 type="email"
                 name="email"
@@ -121,7 +121,7 @@ const Footer = () => {
                 onBlur={() => setIsEmailFocused(false)}
                 placeholder="Your email address"
                 required
-                className={`w-full px-0 py-3 bg-transparent border-b text-sm focus:outline-none transition-colors duration-500 ${
+                className={`w-full px-0 py-4 bg-transparent border-b text-base focus:outline-none transition-colors duration-500 ${
                   isEmailFocused
                     ? 'border-brand-light-gray text-brand-linen placeholder:text-brand-dark-gray'
                     : 'border-brand-border text-brand-text placeholder:text-brand-light-gray focus:border-brand-text'
@@ -134,8 +134,8 @@ const Footer = () => {
                 onFocus={() => setIsEmailFocused(true)}
                 onBlur={() => setIsEmailFocused(false)}
                 placeholder="Your message"
-                rows={3}
-                className={`w-full px-0 py-3 bg-transparent border-b text-sm focus:outline-none resize-none transition-colors duration-500 ${
+                rows={4}
+                className={`w-full px-0 py-4 bg-transparent border-b text-base focus:outline-none resize-none transition-colors duration-500 ${
                   isEmailFocused
                     ? 'border-brand-light-gray text-brand-linen placeholder:text-brand-dark-gray'
                     : 'border-brand-border text-brand-text placeholder:text-brand-light-gray focus:border-brand-text'
@@ -143,7 +143,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className={`w-full sm:w-auto px-6 sm:px-8 py-3 font-roboto text-sm uppercase tracking-wider transition-colors duration-300 ${
+                className={`w-full sm:w-auto px-8 sm:px-10 py-4 font-roboto text-base uppercase tracking-wider transition-colors duration-300 ${
                   isEmailFocused
                     ? 'bg-brand-linen text-brand-text hover:bg-brand-border'
                     : 'bg-brand-text text-brand-linen hover:bg-brand-dark-gray'
@@ -154,9 +154,9 @@ const Footer = () => {
 
               {/* Status Messages */}
               {submitStatus === 'success' && (
-                <div className="flex items-start gap-2 text-green-600">
-                  <CheckCircle size={18} className="flex-shrink-0 mt-0.5" />
-                  <span className="font-roboto text-sm">Your email client has opened with a pre-filled message. Just click send and I'll receive it!</span>
+                <div className="flex items-start gap-3 text-green-600">
+                  <CheckCircle size={20} className="flex-shrink-0 mt-0.5" />
+                  <span className="font-roboto text-base">Your email client has opened with a pre-filled message. Just click send and I'll receive it!</span>
                 </div>
               )}
             </form>
@@ -166,7 +166,7 @@ const Footer = () => {
           <div className="lg:col-span-1 flex flex-col justify-between lg:items-end">
             <div className="lg:text-right">
               <h4
-                className={`font-oswald text-xs uppercase tracking-widest mb-3 sm:mb-4 transition-colors duration-500 ${
+                className={`font-oswald text-sm uppercase tracking-widest mb-4 sm:mb-5 transition-colors duration-500 ${
                   isEmailFocused ? 'text-brand-light-gray' : 'text-brand-dark-gray'
                 }`}
               >
@@ -176,47 +176,47 @@ const Footer = () => {
                 href={linkedInUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 font-roboto text-sm transition-colors duration-300 ${
+                className={`inline-flex items-center gap-3 font-roboto text-base transition-colors duration-300 ${
                   isEmailFocused
                     ? 'text-brand-linen hover:text-brand-light-gray'
                     : 'text-brand-text hover:text-brand-dark-gray'
                 }`}
               >
-                <Linkedin size={20} />
+                <Linkedin size={24} />
                 <span>LinkedIn</span>
               </a>
             </div>
 
             <button
               onClick={scrollToTop}
-              className={`mt-8 lg:mt-0 inline-flex items-center gap-2 font-roboto text-xs uppercase tracking-wider transition-colors duration-300 group ${
+              className={`mt-10 lg:mt-0 inline-flex items-center gap-2 font-roboto text-sm uppercase tracking-wider transition-colors duration-300 group ${
                 isEmailFocused
                   ? 'text-brand-linen hover:text-brand-light-gray'
                   : 'text-brand-text hover:text-brand-dark-gray'
               }`}
             >
               {footerConfig.backToTopText}
-              <ArrowUp size={14} className="transform transition-transform duration-300 group-hover:-translate-y-1" />
+              <ArrowUp size={16} className="transform transition-transform duration-300 group-hover:-translate-y-1" />
             </button>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div
-          className={`mt-12 sm:mt-16 pt-6 sm:pt-8 border-t transition-colors duration-500 ${
+          className={`mt-14 sm:mt-16 lg:mt-20 pt-8 sm:pt-10 border-t transition-colors duration-500 ${
             isEmailFocused ? 'border-brand-dark-gray' : 'border-brand-border'
           }`}
         >
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-5">
             <p
-              className={`font-roboto text-xs text-center sm:text-left transition-colors duration-500 ${
+              className={`font-roboto text-sm text-center sm:text-left transition-colors duration-500 ${
                 isEmailFocused ? 'text-brand-dark-gray' : 'text-brand-light-gray'
               }`}
             >
               {footerConfig.copyright}
             </p>
             <p
-              className={`font-roboto text-xs text-center sm:text-right transition-colors duration-500 ${
+              className={`font-roboto text-sm text-center sm:text-right transition-colors duration-500 ${
                 isEmailFocused ? 'text-brand-dark-gray' : 'text-brand-light-gray'
               }`}
             >

@@ -54,11 +54,11 @@ const LatestArticles = () => {
   };
 
   return (
-    <section ref={sectionRef} id="projects" className="relative py-14 sm:py-16 lg:py-20">
-      <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-12">
+    <section ref={sectionRef} id="projects" className="relative py-16 sm:py-20 lg:py-24">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section title */}
-        <div className="mb-6 sm:mb-8">
-          <h2 className="font-oswald font-light text-2xl sm:text-3xl lg:text-4xl text-brand-text">
+        <div className="mb-8 sm:mb-10">
+          <h2 className="font-oswald font-light text-4xl sm:text-5xl lg:text-6xl text-brand-text">
             {latestArticlesConfig.sectionTitle}
           </h2>
         </div>
@@ -66,7 +66,7 @@ const LatestArticles = () => {
         {/* Grid layout - compact 2x2 */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
         >
           {latestArticlesConfig.articles.map((article, index) => (
             <div
@@ -93,14 +93,14 @@ const LatestArticles = () => {
               </div>
 
               {/* Content - compact */}
-              <div className="mt-2 sm:mt-3">
-                <span className="font-roboto text-[10px] sm:text-xs uppercase tracking-wider text-brand-light-gray">
+              <div className="mt-3 sm:mt-4">
+                <span className="font-roboto text-xs sm:text-sm uppercase tracking-wider text-brand-light-gray">
                   {article.category}
                 </span>
-                <h3 className="font-oswald font-medium text-sm sm:text-base text-brand-text mt-0.5 leading-tight">
+                <h3 className="font-oswald font-medium text-lg sm:text-xl lg:text-2xl text-brand-text mt-1 leading-tight">
                   {article.title}
                 </h3>
-                <p className="font-roboto text-xs sm:text-sm text-brand-dark-gray mt-1 leading-relaxed line-clamp-2">
+                <p className="font-roboto text-sm sm:text-base lg:text-lg text-brand-dark-gray mt-2 leading-relaxed">
                   {article.subtitle}
                 </p>
               </div>
