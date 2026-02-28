@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 14% 97%;
+    --foreground: 0 0% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+    --primary: 220 13% 28%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 9% 46%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 13% 28%;
+    --radius: 0.5rem;
+    --sidebar-background: 40 14% 97%;
+    --sidebar-foreground: 0 0% 12%;
+    --sidebar-primary: 220 13% 28%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 0 0% 12%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 220 13% 28%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-roboto antialiased;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-oswald;
+  }
+  
+  ::selection {
+    background-color: #3d5a80;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  /* Noise texture overlay */
+  .noise-overlay {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    animation: grain 8s steps(10) infinite;
+  }
+  
+  /* Custom cursor */
+  .cursor-custom {
+    cursor: none;
+  }
+  
+  .cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: rgba(51, 51, 51, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease-out;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(51, 51, 51, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+  }
+
+  .cursor-ring.hover {
+    width: 48px;
+    height: 48px;
+    border-color: rgba(51, 51, 51, 0.4);
+  }
+  
+  /* Magnetic effect base */
+  .magnetic {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Split text animation */
+  .split-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .split-char.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Liquid underline */
+  .liquid-underline {
+    position: relative;
+  }
+  
+  .liquid-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .liquid-underline:hover::after {
+    width: 100%;
+  }
+  
+  /* Glass morphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(232, 232, 230, 0.5);
+  }
+  
+  /* Image hover effect */
+  .img-hover-zoom {
+    overflow: hidden;
+  }
+  
+  .img-hover-zoom img {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .img-hover-zoom:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Text mask effect */
+  .text-mask {
+    background: linear-gradient(to right, #333, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Horizontal scroll section */
+  .horizontal-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .horizontal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .horizontal-scroll > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  
+  /* Card tilt effect */
+  .card-tilt {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  /* Grayscale to color */
+  .grayscale-hover {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-out;
+  }
+  
+  .grayscale-hover:hover {
+    filter: grayscale(0%);
+  }
+  
+  /* Section transitions */
+  .section-fade {
+    opacity: 0.95;
+  }
+  
+  .section-fade.in-view {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  /* Expo easing */
+  .ease-expo-out {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .ease-smooth {
+    transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  
+  .ease-dramatic {
+    transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
+  }
+  
+  /* Text balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Perspective */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .perspective-2000 {
+    perspective: 2000px;
+  }
+  
+  /* Transform style */
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  /* Backface visibility */
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}

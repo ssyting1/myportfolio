@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simon Ting Portfolio</title>
+    <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="./assets/index-CSg68mHG.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CnJk-lqI.css">
+  
+<script>
+window.hsCodeDatabase = {
+  "shirts": [{"code": "6109.10.00", "description": "T-shirts, singlets and other vests of cotton"},
+             {"code": "6109.90.10", "description": "T-shirts, singlets of other textiles"},
+             {"code": "6205.20.00", "description": "Men's or boys' shirts of cotton"},
+             {"code": "6206.30.00", "description": "Women's or girls' blouses of cotton"}],
+  "steel": [{"code": "7208.10.00", "description": "Hot-rolled flat-rolled products of iron or steel"},
+            {"code": "7208.25.00", "description": "Hot-rolled products, 4.75mm or more thick"},
+            {"code": "7210.30.00", "description": "Flat-rolled products plated with zinc"},
+            {"code": "7308.90.00", "description": "Structures and parts of structures of iron or steel"}],
+  "computer": [{"code": "8471.30.01", "description": "Portable automatic data processing machines"},
+               {"code": "8471.41.01", "description": "Processing machines with processor and I/O units"},
+               {"code": "8471.49.00", "description": "Other automatic data processing machines"}],
+  "phone": [{"code": "8517.12.00", "description": "Phones for cellular networks"},
+            {"code": "8517.18.00", "description": "Other telephone apparatus"}],
+  "shoes": [{"code": "6403.91.11", "description": "Men's footwear with leather uppers"},
+            {"code": "6403.99.11", "description": "Women's footwear with leather uppers"},
+            {"code": "6404.11.00", "description": "Footwear with rubber or plastic uppers"}],
+  "furniture": [{"code": "9403.20.00", "description": "Metal furniture"},
+                {"code": "9403.30.00", "description": "Wooden furniture"},
+                {"code": "9403.60.90", "description": "Other wooden furniture"}],
+  "car": [{"code": "8703.22.00", "description": "Motor cars 1000-1500cc"},
+          {"code": "8703.23.00", "description": "Motor cars 1500-3000cc"},
+          {"code": "8703.24.00", "description": "Motor cars over 3000cc"}],
+  "toy": [{"code": "9503.00.00", "description": "Tricycles, scooters, pedal cars"},
+          {"code": "9504.30.00", "description": "Games operated by coins or cards"},
+          {"code": "9505.90.00", "description": "Other festive articles"}],
+  "coffee": [{"code": "0901.11.00", "description": "Coffee, not roasted, not decaffeinated"},
+             {"code": "0901.12.00", "description": "Coffee, not roasted, decaffeinated"},
+             {"code": "0901.21.00", "description": "Coffee, roasted, not decaffeinated"}],
+  "tea": [{"code": "0902.10.00", "description": "Green tea (not fermented)"},
+          {"code": "0902.20.00", "description": "Other green tea"},
+          {"code": "0902.30.00", "description": "Black tea (fermented)"}]
+};
+
+window.hsCodeSearch = function(query) {
+  if (!query || query.length < 2) return [];
+  query = query.toLowerCase();
+  var results = [];
+  for (var key in window.hsCodeDatabase) {
+    if (key.includes(query) || query.includes(key)) {
+      results = results.concat(window.hsCodeDatabase[key]);
+    }
+  }
+  // Also search in descriptions
+  for (var key in window.hsCodeDatabase) {
+    var items = window.hsCodeDatabase[key];
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].description.toLowerCase().includes(query)) {
+        // Check if already added
+        var alreadyAdded = false;
+        for (var j = 0; j < results.length; j++) {
+          if (results[j].code === items[i].code) {
+            alreadyAdded = true;
+            break;
+          }
+        }
+        if (!alreadyAdded) results.push(items[i]);
+      }
+    }
+  }
+  return results.slice(0, 5);
+};
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
